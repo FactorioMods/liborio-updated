@@ -1,4 +1,4 @@
-﻿log("LIBORIO UTILDATA")
+log("LIBORIO UTILDATA")
 liborio.print = liborio.log --keep here as may be used
 
 local local_is_valid = function(entity) return type(entity)=="table" end
@@ -192,7 +192,7 @@ local local_create_icon = function(base_icons, new_icons, options)
             elseif options.from.icon then new_icons = {{icon = options.from.icon}}
 			else error("Table given had no icons.") end
 			for _, icon in pairs(new_icons) do
-				if not icon.icon_size then icon.icon_size = options.from.icon_size end
+				if not icon.icon_size then icon.icon_size = (options.from.icon_size or 64) end
 				if not icon.icon_size then error("Had icon "..icon.icon.." but size is missing.") end
             end
 		else

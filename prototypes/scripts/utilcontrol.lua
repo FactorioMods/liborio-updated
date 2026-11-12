@@ -1,4 +1,4 @@
-﻿log("LIBORIO UTILCONTROL")
+log("LIBORIO UTILCONTROL")
 require("defines")
 
 local local_get_biome = function(entity)
@@ -41,7 +41,7 @@ local local_print = function(arg, index)
 end
 
 --[[reduced logic no need to check nil]]
-local local_is_valid = function(entity) return type(entity)=="table" and entity.valid end
+local local_is_valid = function(entity) return (type(entity)=="table" or type(entity)=="userdata") and entity.valid end
 local local_is_valid_and_persistant = function(entity)  return local_is_valid(entity) and not entity.to_be_deconstructed(entity.force) end
 
 local local_get_entity_size = function(entity)
@@ -50,7 +50,7 @@ local local_get_entity_size = function(entity)
         local size = {
                 entity.prototype.selection_box["right_bottom"]["x"] - entity.prototype.selection_box["left_top"]["x"],
                 entity.prototype.selection_box["right_bottom"]["y"] - entity.prototype.selection_box["left_top"]["y"]}
-		if entity.direction == 0 or entity.direction == 4 then return size end
+		if entity.direction == defines.direction.north or entity.direction == defines.direction.south then return size end
 		return { size[2],size[1]}
 	end
 	return {1,1} 
@@ -219,8 +219,8 @@ local local_transfer_fluid_and_convert = function(from, findex, to, tindex, amou
     local from_box = from_boxes[findex]
     local to_boxes = to.fluidbox
     local to_box = to_boxes[tindex]
-	if temp == nil then temp = game.fluid_prototypes[totype] end
-    local fluid_prototype = game.fluid_prototypes[totype]
+	if temp == nil then temp = prototypes.fluid[totype] end
+    local fluid_prototype = prototypes.fluid[totype]
 	if from_box == nil then return end
 	if to_box == nil then 
 		if from_box.amount <= amount then
@@ -383,3 +383,4 @@ liborio.signal.get_posistion_from = local_get_signal_position_from
 liborio.signal.set_new_signal = local_set_new_signal
 
 liborio.get_biome = local_get_biome
+

@@ -1,4 +1,4 @@
-﻿log("LIBORIO UTIL")
+log("LIBORIO UTIL")
 require("defines")
 require("sharedutil")
 

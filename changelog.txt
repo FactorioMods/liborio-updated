@@ -1,7 +1,11 @@
-﻿---------------------------------------------------------------------------------------------------
-Version: 1.1.02
+---------------------------------------------------------------------------------------------------
+Version: 2.0.0
+Date: 2026-11-12
   Changes:
-    - recipe results checking improvements
+    - Update LuaObject validation, cardinal directions, fluid prototype access and default icon sizes for Factorio 2.1.
+    - Retain the library module layout and recipe helpers, and adopt original Liborio save state.
+  Testing:
+    - Native combined-profile loading, namespace preservation and paired 1200-tick consistency checks passed.
 ---------------------------------------------------------------------------------------------------
 Version: 0.18.04
   Bug Fixes:

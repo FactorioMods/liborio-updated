@@ -1,4 +1,4 @@
-﻿if not liborio then liborio = {} end
+if not liborio then liborio = {} end
 if not liborio.defines then liborio.defines = {} end
 if not liborio.defines.data_stages then liborio.defines.data_stages = {} end
 if not liborio.defines.names then liborio.defines.names = {} end
@@ -18,7 +18,7 @@ liborio.defines.names.force_neutral = "neutral"
 --[[events]]
 liborio.events.on_build = {defines.events.on_built_entity, defines.events.on_robot_built_entity}
 liborio.events.on_remove = {defines.events.on_entity_died,defines.events.on_robot_pre_mined,defines.events.on_robot_mined_entity,defines.events.on_player_mined_entity}
-liborio.events.on_pick_up_item = {defines.events.on_picked_up_item,defines.events.on_player_mined_item,defines.events.on_robot_mined}
+liborio.events.on_pick_up_item = {defines.events.on_picked_up_item,defines.events.on_player_mined_item}
 --[[priorites]]
 liborio.events.low_priority = 44
 liborio.events.medium_priority = 30

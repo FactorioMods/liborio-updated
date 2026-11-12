@@ -1,4 +1,4 @@
-﻿log("LIBORIO SHAREDUTIL")
+log("LIBORIO SHAREDUTIL")
 require("prototypes.scripts.defines")
 
 if not liborio.log_enable then liborio.log_enable = true end

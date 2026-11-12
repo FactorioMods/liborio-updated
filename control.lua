@@ -1,3 +1,6 @@
-﻿log("LIBORIO CONTROL")
+log("LIBORIO CONTROL")
 require("prototypes.scripts.defines") 
 require("prototypes.scripts.util") 
+local legacy_import=require("legacy_import")
+script.on_init(function() legacy_import.adopt("liborio") end)
+script.on_configuration_changed(function() legacy_import.adopt("liborio") end)

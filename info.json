@@ -1,13 +1,17 @@
 {
-  "name": "liborio",
-  "version": "1.1.02",
-  "title": "Liborio",
-  "author": "PixelWhipped",
+  "name": "liborio-updated",
+  "version": "2.0.0",
+  "title": "Liborio: Updated",
+  "author": "PixelWhipped; johnmart19 / FactorioMods (legacy-state port)",
   "contact": "",
   "homepage": "https://www.patreon.com/user?u=15367757",
-  "factorio_version": "1.1",
-  "description": "Common library for various factorio mods",
+  "factorio_version": "2.1",
+  "description": "Full Liborio helper library updated for Factorio 2.1 LuaObjects, cardinal directions, fluid prototypes and icon defaults, with native legacy state import.",
   "dependencies": [
-    "base >= 1.1.0"
+    "base >= 2.1.24",
+    "! liborio"
+  ],
+  "migrates_from": [
+    "liborio"
   ]
 }

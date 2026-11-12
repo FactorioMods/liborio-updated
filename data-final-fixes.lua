@@ -1,3 +1,3 @@
-﻿log("LIBORIO DATA FINAL FIXES")
+log("LIBORIO DATA FINAL FIXES")
 require("prototypes.scripts.defines") 
 require("prototypes.scripts.util") 
